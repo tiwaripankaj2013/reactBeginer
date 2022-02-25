@@ -9,7 +9,7 @@ export default function Counter() {
   return (
     <div>
 
-       <h1>Redux </h1>
+       <h1>Redux Testing of rebse branch</h1>
        <div className="inline-flex">
        <button className="p-1 m-1 bg-teal-800 text-white" onClick={() => {dispatch(increment())}}>+</button>
        <p className=" border border-teal-800 rounded">Counter value {count} </p>
