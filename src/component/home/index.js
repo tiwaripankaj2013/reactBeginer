@@ -15,9 +15,13 @@ export default function Home() {
   const showStudentList = () =>{
    return setstudentList(true),setLoginForm(false)
   }
+  const formsType={
+    login:"Login Form",
+    signup:"Register form"
+  }
   return (
     <>
-    {signUpForm ? <Signup loginForm = {showLoginForm}/> :loginForm ? <Login signIn={showStudentList}  signUpForm={showSignupForm} /> : " "}
+    {signUpForm ? <Signup formName={formsType.signup} loginForm = {showLoginForm}/> :loginForm ? <Login formName={formsType.login} signIn={showStudentList}  signUpForm={showSignupForm} /> : " "}
     { studentListData?   <StudentList /> : " "}
     </>
   )

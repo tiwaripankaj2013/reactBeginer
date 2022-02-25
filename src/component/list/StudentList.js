@@ -2,13 +2,14 @@ import React from 'react'
 import ListItem from './ListItem';
 
 
-const StudentList = (props) => {
+const StudentList = () => {
    const students = [
       {name:"Rahul Kumar",class:7},
       {name:"Shyam Kumar singh",class:8},
       {name:"Piyush Kumar",class:9},
       {name:"Priya Kumari",class:10},
-      {name:"Sumit Pandey",class:6}
+      {name:"Sumit Pandey",class:6},
+      {name:"Ramesh Sharma",class:6},
    ]
 const studentData = students.map((student)=>{
  return   <ListItem key={Math.random()} name={student.name} classes={student.class} />
