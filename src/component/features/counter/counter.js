@@ -9,7 +9,11 @@ export default function Counter() {
   return (
     <div>
 
+<<<<<<< HEAD
        <h1>Redux Testing of rebse branch</h1>
+=======
+       <h1>Redux Rebase test  </h1>
+>>>>>>> 12b4598a0171adfce49250fe85fe40d40522a77e
        <div className="inline-flex">
        <button className="p-1 m-1 bg-teal-800 text-white" onClick={() => {dispatch(increment())}}>+</button>
        <p className=" border border-teal-800 rounded">Counter value {count} </p>
