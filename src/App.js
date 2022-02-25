@@ -4,7 +4,6 @@ import DynamicRouting from "./component/dynamicRouting";
 import Header from "./component/header";
 import Home from "./component/home";
 import PageNotFound from "./component/pageNotFound";
-
 function App() {
   return (
   <BrowserRouter>
