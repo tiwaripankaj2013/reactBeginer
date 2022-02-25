@@ -10,14 +10,14 @@ export default function Counter() {
   return (
     <div>
 
-       <h1>Redux </h1>
+       <h1>Redux Rebase test  </h1>
        <div className="inline-flex">
        <button className="p-1 m-1 bg-teal-800 text-white" onClick={() => {dispatch(increment())}}>+</button>
        <p className=" border border-teal-800 rounded">Counter value {count} </p>
        <button className="p-1 m-1 bg-teal-800 text-white" onClick={() => {dispatch(decrement())}}>-</button>
        </div>
        <button  onClick={() =>dispatch(incrementByAmount(15))}>increase 15</button>
-      
+      <p>Try rebase code of react </p>
     </div>
   )
 }
