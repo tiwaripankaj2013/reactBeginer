@@ -1,6 +1,6 @@
 import React from 'react'
-import Coin from '../features/coin'
-import Counter from '../features/counter/counter'
+import Coin from '../../component/features/coin'
+import Counter from '../../component/features/counter/counter'
 
 export default function About() {
   return (
