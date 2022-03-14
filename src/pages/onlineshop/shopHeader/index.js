@@ -18,8 +18,8 @@ import React from 'react';
 
          <div className="flex">
             <div className="w-1/3">
-            <label>Choose By Brand</label>
-            <select className="max-w-lg px-3 py-2 mx-auto block">
+            <label className="block text-left">Choose By Brand</label>
+            <select className="max-w-lg px-3 py-2 mx-auto block my-1">
                <option>Supplies by Printer</option>
                <option>Hcl Technology</option>
                <option>Dell Technology</option>
@@ -27,6 +27,7 @@ import React from 'react';
             </select>
             </div>
          </div>
+         <br className=" border-b border-gray-500"/>
     </div>
     </>
   )
