@@ -13,7 +13,7 @@ export default function Home() {
    return setsignUpForm(true)
   }
   const showStudentList = () =>{
-   return setstudentList(true),setLoginForm(false)
+   return setstudentList(true), setLoginForm(false)
   }
   const formsType={
     login:"Login Form",

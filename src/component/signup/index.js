@@ -7,8 +7,6 @@ const [fname,setfName]=useState('');
 const [lname,setlName]=useState('');
 const [email,setEmail]=useState('');
 const [mobile,setMobile]=useState('');
-const [pass,setPass]=useState('');
-const [cpass,setcPass]=useState('');
 
 console.log(fname,lname,email);
   const handleSubmit = () =>{
