@@ -1,43 +1,52 @@
-import React,{useRef,useState} from "react";
+import React, { useRef, useState } from "react";
 
-export default function Signup(props) {
-  let inputRef = useRef(null);
+function Signup(props) {
+  const [inputs, setInputs] = useState({
+    fname: "",
+    lname: "",
+    email: "",
+    mobile: "",
+    password: "",
+    cpassword:"",
+  });
 
-const [fname,setfName]=useState('');
-const [lname,setlName]=useState('');
-const [email,setEmail]=useState('');
-const [mobile,setMobile]=useState('');
+  const handleSubmit = (e) => {
+    localStorage.setItem(inputs,JSON.stringify(inputs));
+  };
 
-console.log(fname,lname,email);
-  const handleSubmit = () =>{
-    // console.log(inputRef);
-  // console.log( inputRef.current.value)
-   inputRef.current.style.color="red";
-   
+  const changeHandler = (e) => {
+    e.persist();
+    setInputs({
+      ...inputs,
+      [e.target.name] : e.target.value
+    })
   }
   return (
     <div className=" bg-green-900  flex justify-center items-center py-8">
-      <form
-        action="#"
-        className="w-3/4 block bg-white rounded shadow-lg "
-      >
-        <div
-          className="banner flex w-full bg-cover bg-bottom items-end px-6 py-4"
-        >
-          <h2 className=" text-green-700 font-mono text-4xl">{props.formName} {lname}</h2>
+      <div className="w-3/4 block bg-white rounded shadow-lg ">
+        <div className="banner flex w-full bg-cover bg-bottom items-end px-6 py-4">
+          <h2 className=" text-green-700 font-mono text-4xl">
+            {props.formName} {inputs.lname}
+          </h2>
         </div>
         <div className="w-full flex px-12 py-2">
           <label htmlFor="user" className="block w-1/2 mb-4 mr-2">
             <input
               type="text"
-              placeholder="First Name" ref={inputRef} value={fname} onChange={(e)=>setfName(e.target.value)}
+              placeholder="First Name"
+              name="fname"
+              value={inputs.fname}
+              onChange={changeHandler}
               className="appearance-none border-b-2 w-full p-2 text-grey-darker leading-base focus:outline-none text-sm"
             />
           </label>
           <label htmlFor="user" className="block w-1/2 m4-6">
             <input
               type="text"
-              placeholder="Last Name" value={lname} onChange={(e)=>setlName(e.target.value)}
+              placeholder="Last Name"
+              name="lname"
+              value={inputs.lname}
+              onChange={changeHandler}
               className="appearance-none border-b-2 w-full p-2 text-grey-darker leading-base focus:outline-none text-sm"
             />
           </label>
@@ -46,14 +55,20 @@ console.log(fname,lname,email);
           <label htmlFor="email" className="block w-1/2 mb-4 mr-2">
             <input
               type="email"
-              placeholder="Email" value={email} onChange={(e)=>setEmail(e.target.value)}
+              placeholder="Email"
+              name="email"
+              value={inputs.email}
+              onChange={changeHandler}
               className="appearance-none border-b-2 w-full p-2 text-grey-darker leading-base focus:outline-none text-sm"
             />
           </label>
           <label htmlFor="mobile" className="block w-1/2 mb-4 mr-2">
             <input
               type="tel"
-              placeholder="mobile" value={mobile} onChange={(e)=>setMobile(e.target.value)}
+              placeholder="mobile"
+              name="mobile"
+              value={inputs.mobile}
+              onChange={changeHandler}
               className="appearance-none border-b-2 w-full p-2 text-grey-darker leading-base focus:outline-none text-sm"
             />
           </label>
@@ -63,6 +78,9 @@ console.log(fname,lname,email);
             <input
               type="password"
               placeholder="password"
+              name="password"
+              value={inputs.password}
+              onChange={changeHandler}
               className="appearance-none border-b-2 w-full p-2 text-grey-darker leading-base focus:outline-none text-sm"
             />
           </label>
@@ -71,18 +89,30 @@ console.log(fname,lname,email);
               type="password"
               placeholder="confirm password"
               className="appearance-none border-b-2 w-full py-2 text-grey-darker leading-base focus:outline-none text-sm"
+              onChange={changeHandler}
+              name="cpassword"
+              value={inputs.cpassword}
             />
           </label>
         </div>
         <div className="flex justify-between px-12 pb-6">
-          <button className="bg-red-700 hover:bg-red-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" onClick={handleSubmit}>
+          <button
+            className="bg-red-700 hover:bg-red-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+            type="button"
+            onClick={handleSubmit}
+          >
             Register
           </button>
-          <button className="bg-blue-700 hover:bg-blue-800 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" onClick={props.loginForm}>
+          <button
+            className="bg-blue-700 hover:bg-blue-800 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+            type="button"
+            onClick={props.loginForm}
+          >
             Login
           </button>
         </div>
-      </form>
+      </div>
     </div>
   );
 }
+export default Signup;
