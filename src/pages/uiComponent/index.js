@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { CustomButton } from "../../component/ui/button";
-import CustomSelect from "../../component/ui/select";
+import {CustomSelect} from "../../component/ui/select";
 
 let stateList = [
   {
