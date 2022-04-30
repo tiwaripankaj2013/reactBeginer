@@ -1,4 +1,4 @@
-import React,{useState} from 'react';
+import {useState} from 'react';
 import Login from '../../component/login';
 import Signup from '../../component/signup';
 import StudentList from '../../component/list/StudentList';
@@ -13,7 +13,7 @@ export default function Home() {
    return setsignUpForm(true)
   }
   const showStudentList = () =>{
-   return setstudentList(true),setLoginForm(false)
+   return setstudentList(true), setLoginForm(false)
   }
   const formsType={
     login:"Login Form",
@@ -22,7 +22,7 @@ export default function Home() {
   return (
     <>
     {signUpForm ? <Signup formName={formsType.signup} loginForm = {showLoginForm}/> :loginForm ? <Login formName={formsType.login} signIn={showStudentList}  signUpForm={showSignupForm} /> : " "}
-    { studentListData?   <StudentList /> : " "}
+    {studentListData?   <StudentList /> : " "}
     </>
   )
 }

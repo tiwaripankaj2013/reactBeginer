@@ -1,13 +1,11 @@
 import React from 'react';
-import { useNavigate,Link } from 'react-router-dom';
-import User from './user';
+import { Link } from 'react-router-dom';
 const users = [
    {id:"a1", name:'Pankaj',age:24},
    {id:"a2", name:'Sujeet kumar',age:24},
    {id:"a3", name:'Rakesh singh',age:24}
  ]
 export default function DynamicRouting() {
-  const navigate = useNavigate();
   // navigate('users/',{replace:true});
   //navigate(-1) // go to previous page
   return (
