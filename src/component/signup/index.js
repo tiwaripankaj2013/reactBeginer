@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useState } from "react";
 
 function Signup(props) {
   const [inputs, setInputs] = useState({
