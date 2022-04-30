@@ -1,5 +1,5 @@
 import React from 'react';
-import { useNavigate,Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 const users = [
    {id:"a1", name:'Pankaj',age:24},
    {id:"a2", name:'Sujeet kumar',age:24},
