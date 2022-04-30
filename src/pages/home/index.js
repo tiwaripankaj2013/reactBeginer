@@ -1,7 +1,7 @@
 import React,{useState} from 'react';
-import Login from '../login';
-import Signup from '../signup';
-import StudentList from '../list/StudentList';
+import Login from '../../component/login';
+import Signup from '../../component/signup';
+import StudentList from '../../component/list/StudentList';
 export default function Home() {
   const [signUpForm , setsignUpForm] = useState(true);
   const [studentListData,setstudentList] = useState(false);
