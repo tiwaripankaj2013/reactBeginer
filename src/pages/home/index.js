@@ -22,7 +22,7 @@ export default function Home() {
   return (
     <>
     {signUpForm ? <Signup formName={formsType.signup} loginForm = {showLoginForm}/> :loginForm ? <Login formName={formsType.login} signIn={showStudentList}  signUpForm={showSignupForm} /> : " "}
-    { studentListData?   <StudentList /> : " "}
+    {studentListData?   <StudentList /> : " "}
     </>
   )
 }

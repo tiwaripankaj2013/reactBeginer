@@ -9,7 +9,7 @@ const Login = (props) => {
   const [err, setErr] = useState(false);
 
   const getLoginFormData = (e) => {
-    console.log(inputs.userName);
+    // console.log(inputs.userName);
   localStorage.setItem(inputs,JSON.stringify(inputs));
   };
   const handleChange = (e) => {
