@@ -38,4 +38,11 @@ const InputWithLabel = (props) => {
   );
 };
 
-export { InputWithoutLabel, InputWithLabel };
+const InputWrapper = (customClass,props) => {
+  return(
+    <div className={`w-full flex px-12 py-2 ${customClass.length> 0? customClass : ''}`}>
+      {props.children}
+    </div>
+  )
+}
+export { InputWithoutLabel, InputWithLabel,InputWrapper };

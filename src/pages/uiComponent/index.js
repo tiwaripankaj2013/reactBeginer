@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { CustomButton } from "../../component/ui/button";
 import {CustomSelect} from "../../component/ui/select";
-
+import {Card} from '../../component/ui/Card';
+import {CustomTable} from '../../component/ui/table';
 let stateList = [
   {
     key: "AN",
@@ -149,7 +150,13 @@ let stateList = [
   },
 ];
 const habits = ["dancing", "listning music", "traveling"];
-
+const tHeading = ['#','First Name','Last Name','Email','Action'];
+const tableData = [
+    {id:1,fName:"Pankaj",lName:"Tiwari",email:"tiwari@gmail.com"},
+    {id:2,fName:"Rakesh",lName:"Pandey",email:"rakesh@gmail.com"},
+    {id:3,fName:"Shyam",lName:"Singh",email:"shyam@gmail.com"},
+    {id:4,fName:"Mohan",lName:"Kumar",email:"mohan@yahoo.com"}
+]
 export const UiComponent = () => {
 const { hobies, setHobies } = useState(true);
 // const showHobies =  () => {
@@ -157,13 +164,13 @@ const { hobies, setHobies } = useState(true);
 // }
  
   return (
-    <div className="container">
+    <div className="custom-container">
       <CustomSelect
         className=" border-indigo-700 shadow-md m-2 border p-1"
         default="select state"
         data={stateList}
       />
-
+     
       <CustomButton
         label="Show Hobbies"
         className=" bg-teal-600 text-white rounded px-3 py-1 cursor-pointer"
@@ -179,6 +186,9 @@ const { hobies, setHobies } = useState(true);
         </ul> : ''}
       
       {hobies ? <p>welcome </p> : ' '}
+      <Card title="User List" subTitle="Basic Information">
+        <CustomTable tableHeading={tHeading} tableData={tableData}/>
+      </Card>
     </div>
   );
 };

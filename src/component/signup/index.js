@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { InputWithoutLabel } from "../ui/input";
+import { InputWithoutLabel ,InputWrapper} from "../ui/input";
 function Signup(props) {
   const [inputs, setInputs] = useState({
     fname: "",
@@ -26,7 +26,7 @@ function Signup(props) {
       <div className="w-3/4 block bg-white rounded shadow-lg ">
         <div className="banner flex w-full bg-cover bg-bottom items-end px-6 py-4">
           <h2 className=" text-green-700 font-mono text-4xl">
-            {props.formName} {inputs.lname}
+            {props.formName} 
           </h2>
         </div>
         <div className="w-full flex px-12 py-2">
@@ -56,6 +56,7 @@ function Signup(props) {
             value={inputs.email}
             onChange={changeHandler}
           />
+          <InputWrapper>
           <InputWithoutLabel
             htmlFor="mobile"
             inputType="tel"
@@ -64,8 +65,9 @@ function Signup(props) {
             value={inputs.mobile}
             onChange={changeHandler}
           />
+          </InputWrapper>
         </div>
-        <div className="w-full flex px-12 py-2">
+        <InputWrapper customClass="mb-4">
           <InputWithoutLabel
             htmlFor="password"
             inputType="password"
@@ -82,7 +84,7 @@ function Signup(props) {
             value={inputs.cpassword}
             onChange={changeHandler}
           />
-        </div>
+        </InputWrapper>
         <div className="flex justify-between px-12 pb-6">
           <button
             className="bg-red-700 hover:bg-red-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
