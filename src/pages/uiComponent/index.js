@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import { CustomButton } from "../../component/ui/button";
+import { CustomButton } from "../../component/ui/customButton";
 import {CustomSelect} from "../../component/ui/select";
-import {Card} from '../../component/ui/Card';
-import {CustomTable} from '../../component/ui/table';
+import {Card} from '../../component/ui/card';
+import {CustomTable} from '../../component/ui/customTable';
 let stateList = [
   {
     key: "AN",
@@ -150,7 +150,6 @@ let stateList = [
   },
 ];
 const habits = ["dancing", "listning music", "traveling"];
-const tHeading = ['#','First Name','Last Name','Email','Action'];
 const tableData = [
     {id:1,fName:"Pankaj",lName:"Tiwari",email:"tiwari@gmail.com"},
     {id:2,fName:"Rakesh",lName:"Pandey",email:"rakesh@gmail.com"},
@@ -162,7 +161,13 @@ const { hobies, setHobies } = useState(true);
 // const showHobies =  () => {
 //   hobies === true ? setHobies(false) : setHobies(true);
 // }
- 
+const columns = [
+  {field:'id',title:'#'},
+  {field:'fName',title:'First Name'},
+  {field:'lName',title:'Last Name'},
+  {field:'email',title:'Email'},
+  {field:'edit',title:'Action'},
+]
   return (
     <div className="custom-container">
       <CustomSelect
@@ -173,7 +178,7 @@ const { hobies, setHobies } = useState(true);
      
       <CustomButton
         label="Show Hobbies"
-        className=" bg-teal-600 text-white rounded px-3 py-1 cursor-pointer"
+        customClass=" bg-teal-600 text-white rounded px-3 py-1 cursor-pointer"
         event={() =>{setHobies(true)}}
       />
       
@@ -187,7 +192,7 @@ const { hobies, setHobies } = useState(true);
       
       {hobies ? <p>welcome </p> : ' '}
       <Card title="User List" subTitle="Basic Information">
-        <CustomTable tableHeading={tHeading} tableData={tableData}/>
+        <CustomTable columns={columns} tableData={tableData}/>
       </Card>
     </div>
   );

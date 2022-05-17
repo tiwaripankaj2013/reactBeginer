@@ -1,0 +1,1 @@
+export const APIURL = 'https://api.wazirx.com/sapi/v1/tickers/24hr';

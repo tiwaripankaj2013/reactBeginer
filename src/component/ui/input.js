@@ -38,10 +38,10 @@ const InputWithLabel = (props) => {
   );
 };
 
-const InputWrapper = (customClass,props) => {
+const InputWrapper = ({customClass,...rest}) => {
   return(
-    <div className={`w-full flex px-12 py-2 ${customClass.length> 0? customClass : ''}`}>
-      {props.children}
+    <div className={`w-full flex px-12 py-2 ${customClass ? customClass:''}`}>
+      {rest.children}
     </div>
   )
 }
