@@ -3,7 +3,7 @@ import { APIURL } from "../../config";
 import { CustomTable } from "../../component/ui/customTable";
 
 
-export const CryptoCurrency = (props) => {
+export const CryptoCurrency = () => {
   const [error, setError] = useState(null);
   const [isLoading, setIsLoaded] = useState(false);
   const [data, setData] = useState([]);
@@ -15,7 +15,7 @@ export const CryptoCurrency = (props) => {
      {field:'highPrice',title:'High Price'},
      {field:'lowPrice',title:'Low Price'},
      {field:'volume',title:'Quantity'},
-     {field:'',title:'Action'},
+     {field:'action',title:'Action',render:()=>{<button>Welcome</button>}},
   ]
 
  
@@ -34,7 +34,6 @@ export const CryptoCurrency = (props) => {
         }
       );
   }, []);
-console.log(data);
   return (
     <div className="container mx-auto my-2">
       {
