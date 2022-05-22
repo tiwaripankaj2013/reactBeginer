@@ -3,7 +3,7 @@ import CardItem from './cardItem';
 import ShopHeader from './shopHeader';
 import {ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/outline";
 import shopData from  './data';
-import { SelectWithLabel } from '../../component/ui/select';
+import { SelectWithLabel } from '../../components/ui/select';
  const OnlineShop = () => {
   const {brand,products} = shopData();
   

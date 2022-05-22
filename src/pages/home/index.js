@@ -1,9 +1,9 @@
 import {useState} from 'react';
-import Login from '../../component/login';
-import Signup from '../../component/signup';
-import StudentList from '../../component/list/StudentList';
-import { Card } from "../../component/ui/card";
-import { CustomTable } from "../../component/ui/customTable";
+import Login from '../../components/login';
+import Signup from '../../components/signup';
+import StudentList from '../../components/list/StudentList';
+import { Card } from "../../components/ui/card";
+import { CustomTable } from "../../components/ui/customTable";
 
  function Home() {
   const [signUpForm , setsignUpForm] = useState(true);

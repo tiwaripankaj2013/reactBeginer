@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import { CustomButton } from "../../component/ui/customButton";
-import {CustomSelect} from "../../component/ui/select";
-import {Card} from '../../component/ui/card';
-import {CustomTable} from '../../component/ui/customTable';
+import { CustomButton } from "../../components/ui/customButton";
+import {CustomSelect} from "../../components/ui/select";
+import {Card} from '../../components/ui/card';
+import {CustomTable} from '../../components/ui/customTable';
 let stateList = [
   {
     key: "AN",

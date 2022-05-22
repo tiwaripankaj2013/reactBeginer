@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { APIURL } from "../../config";
-import { CustomTable } from "../../component/ui/customTable";
+import { CustomTable } from "../../components/ui/customTable";
 
 
 export const CryptoCurrency = () => {
