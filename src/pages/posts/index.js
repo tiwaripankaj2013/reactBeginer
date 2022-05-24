@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { useGetAllPostQuery } from "../../features/services/post";
+// import { useGetAllPostQuery } from "../../services/post";
 import { useNavigate } from "react-router";
 
 const Posts = () => {
-  const responseInfo = useGetAllPostQuery();
-  console.log('Response Information : ',responseInfo)
+  // const responseInfo = useGetAllPostQuery();
+  // console.log('Response Information : ',responseInfo)
 
   return(
     <div className="bg-gray-500">

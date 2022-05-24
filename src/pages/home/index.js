@@ -14,7 +14,7 @@ import { CustomTable } from "../../components/ui/customTable";
   const [userId,setUserId] = useState(null);
   const [userDetails,setUserDetails] = useState(null);
 
-  const tHeading = ["Id", "First name", "Last name", "Email",'Acton'];
+ 
 
   const showLoginForm = () =>{
      setsignUpForm(false)
@@ -57,7 +57,12 @@ import { CustomTable } from "../../components/ui/customTable";
     login:"Login Form",
     signup:"Register form"
   }
-
+  const columns = [
+    {field:'fName',title:'First Name'},
+    {field:'lName',title:'Last Name'},
+    {field:'email',title:'Email'},
+    {field:'mobile',title:'Mobile'},
+  ]
   return (
     <>
     {signUpForm ? <Signup signupData={handleSignUpData} userDetails={userDetails}
@@ -68,7 +73,7 @@ import { CustomTable } from "../../components/ui/customTable";
     <div className="custom-container">
       <Card title="User List" subTitle="Basic Information">
       {userList.length > 0 ? (
-        <CustomTable tableHeading={tHeading} tableData={userList} deleteHandler={delteUser} editHandler={editUserDetail} />
+        <CustomTable columns={columns} tableData={userList} />
       ) : 'no any user register'}
       </Card>
       </div>

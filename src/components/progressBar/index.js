@@ -1,22 +1,25 @@
-import React, { useState,useEffect,useRef } from "react";
+import React, { useState,useEffect} from "react";
 
 export const ProgressBar = () => {
   const [progress, setProgress] = useState(0);
 
-
-  let interval = useRef(
-  setInterval(()=>{
-    setProgress(prevprog => prevprog + 1);
-  },1000));
-  console.log(interval);
-  console.log(progress);
-  // clearInterval(interval.current);
   useEffect(()=>{
-if(progress>50){
-console.log('test')
-  clearInterval(interval.current);
-}
-  },[progress])
+   
+    // let interval = setInterval(() => setProgress(progress + 10), 2000);
+    
+    // if(progress >= 100){
+    //   clearInterval(interval);
+    // }
+    // let interval =  setInterval(function () {
+    //   setProgress(progress +10);
+    //   if(progress>100){
+    //     clearInterval(interval);
+    //   }
+    //   },1000);
+    
+    
+  },[progress]);
+  
 
 
   return (

@@ -31,7 +31,7 @@ function App() {
       <Route path="/rating" element={<RatingList />} /> 
       <Route path="/cryptoCurrency" element={<CryptoCurrency />} /> 
       <Route path="/uiComponent" element={<UiComponent />} /> 
-      <Route path="/movies" element={<Products />} /> 
+      <Route path="/products" element={<Products />} /> 
       <Route path="/cart" element={<Cart />} /> 
       <Route path="*" element={<PageNotFound/>} /> 
     </Routes>

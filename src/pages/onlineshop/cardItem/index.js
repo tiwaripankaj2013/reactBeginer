@@ -10,9 +10,9 @@ const CardItem = (props) => {
             <img className="w-full" src={props.img} alt="product" />
           </div>
           <div className="px-3 mb-6">
-            <p className="text-base text-gray-700 mb-4">
+            {/* <p className="text-base text-gray-700 mb-4">
               item <span>{props.id}</span>
-            </p>
+            </p> */}
             <Link
               to="#acd"
               className=" text-primary leading-5 text-lg  font-bold block mb-8"

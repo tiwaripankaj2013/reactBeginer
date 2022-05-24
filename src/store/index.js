@@ -1,7 +1,7 @@
 
 import {configureStore} from "@reduxjs/toolkit";
 // old redux counterr application for define
-import counterReducer from '../../components/features/counter/counterSlice';
+import counterReducer from './counterSlice';
 import cartReducer from './cartSlice';
 import productReducer from './productSlice';
 
@@ -12,5 +12,5 @@ import productReducer from './productSlice';
       cart:cartReducer,
       
    },
-})
+});
 export default store;
