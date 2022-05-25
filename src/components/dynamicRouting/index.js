@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { Users } from '../../pages/user';
 
 const users = [
    {id:"a1", name:'Pankaj',age:24},
@@ -16,8 +17,8 @@ export default function DynamicRouting() {
     <ol>
        {users.map((user)=><li key={"users/"+user.id}><Link to={user.id} >{user.name} <span className=" inline-block pl-2 text-green-700">Age :  {user.age}</span></Link></li>)}
    </ol>
-
+   <Users/>
    </div>
-   
+  
   )
 }

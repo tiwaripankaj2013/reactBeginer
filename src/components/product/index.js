@@ -1,6 +1,5 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect} from "react";
 import { useSelector, useDispatch } from "react-redux";
-import CardItem from "../../pages/onlineshop/cardItem";
 import { fetchProducts } from "../../store/productSlice";
 import { add } from "../../store/cartSlice";
 import { STATUSES } from "../../store/productSlice";
