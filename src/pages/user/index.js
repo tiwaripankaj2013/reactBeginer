@@ -22,8 +22,6 @@ export const Users = () => {
       {field:'name',title:'Name'},
       {field:'email',title:'Email'},
       {field:'phone',title:'Phone No.'},
-
-       {field:Object.values('address').join(', '),title:'Address'},
     ]
     
   return (
