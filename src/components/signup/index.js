@@ -29,6 +29,17 @@ useEffect(() => {
     e.preventDefault();
     if(inputs.fName && inputs.lName && inputs.email && inputs.mobile){
       signupData(inputs);
+      let existdata =  localStorage.getItem('users');
+      if(existdata == null){
+        let userdata = [inputs];
+        localStorage.setItem('users', JSON.stringify(userdata));
+      }
+      else{
+        // break the string multiple word
+      let localdata = [...existdata];
+        localdata.push(inputs);
+        localStorage.setItem('users', JSON.stringify(localdata));
+      }
       setInputs({
         fName: "",
         lName: "",
