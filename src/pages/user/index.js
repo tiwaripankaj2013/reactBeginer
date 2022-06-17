@@ -15,8 +15,7 @@ export const Users = () => {
     if (status === STATUSES.ERROR) {
       return <h2>Something went wrong</h2>;
     }
-    let color = 'red'
-    console.log(users);
+  
     const tableHeading = [
       {field:'id',title:'S.No'},
       {field:'name',title:'Name'},

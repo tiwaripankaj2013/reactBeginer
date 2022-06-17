@@ -5,6 +5,7 @@ const InputWithoutLabel = (props) => {
         type={props.inputType}
         placeholder={props.placeholder}
         name={props.name}
+        maxLength={props.maxLength ? props.maxLength :'50'}
         value={props.value}
         onChange={props.onChange}
         className="appearance-none border-b-2 w-full p-2 text-grey-darker leading-base focus:outline-none text-sm"
