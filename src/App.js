@@ -8,12 +8,14 @@ import PageNotFound from "./pages/pageNotFound";
 import RatingList from "./pages/rating";
 import UiComponent from "./pages/uiComponent";
 import { CryptoCurrency } from "./pages/cryptoCurency";
+import ErrorBoundary from "./components/errorBoundary";
 const About = React.lazy(() => import('./pages/about'));
 const DynamicRouting = React.lazy(() => import('./components/dynamicRouting')); //lazy loading not default load page
 
 function App() {
   return (
   <BrowserRouter>
+  <ErrorBoundary>
    <Header /> 
    <Suspense
    fallback={<p>Loadin...</p>}
@@ -30,7 +32,9 @@ function App() {
       <Route path="*" element={<PageNotFound/>} /> 
     </Routes>
     </Suspense>
+    </ErrorBoundary>
   </BrowserRouter>
+  
   );
 }
 
