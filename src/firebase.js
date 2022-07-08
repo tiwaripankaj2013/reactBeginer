@@ -1,23 +1,20 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
-import { getAuth } from "firebase/auth";
-import {getFirestore} from 'firebase/firestore';
+import { getAnalytics } from "firebase/analytics";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyBJpEjKVmS4I93Evv63vIImh5wyS43MDNA",
-  authDomain: "authentication-721ef.firebaseapp.com",
-  projectId: "authentication-721ef",
-  storageBucket: "authentication-721ef.appspot.com",
-  messagingSenderId: "542606974517",
-  appId: "1:542606974517:web:7f23933fe70af5d9d4db7c",
-  measurementId: "G-MPZ1K3SQD5"
+  apiKey: "AIzaSyBz6oKoX3TCDixskTNtv0mKQ957TLDMvXI",
+  authDomain: "tasks-220c6.firebaseapp.com",
+  databaseURL: "https://tasks-220c6-default-rtdb.europe-west1.firebasedatabase.app",
+  projectId: "tasks-220c6",
+  storageBucket: "tasks-220c6.appspot.com",
+  messagingSenderId: "1012532949409",
+  appId: "1:1012532949409:web:9791f3be8b96a488e01be0",
+  measurementId: "G-1YK958FDLY"
 };
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);
 
-
-const auth = getAuth();
-const db = getFirestore();
-
-export { app, auth ,db};
+export { app,analytics};

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { InputWithLabel } from "../ui/input";
 import { signInWithEmailAndPassword ,updateProfile} from "firebase/auth";
-import { auth } from "../../firebase";
+import { analytics } from "../../firebase";
 const SignupUser = (props) => {
   const [inputs, setInputs] = useState({
     userName: "",
@@ -20,7 +20,7 @@ const SignupUser = (props) => {
       return;
     }
     setErrorMesage('');
-    signInWithEmailAndPassword(auth,inputs.userName,inputs.userPassword)
+    signInWithEmailAndPassword(analytics,inputs.userName,inputs.userPassword)
     .then(async (res) => {
       
       await updateProfile(user,{
