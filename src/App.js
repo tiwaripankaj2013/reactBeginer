@@ -19,6 +19,7 @@ const DynamicRouting = React.lazy(() => import('./components/dynamicRouting')); 
 function App() {
   return (
   <BrowserRouter>
+  <ErrorBoundary>
    <Header /> 
    <Suspense
    fallback={<p>Loadin...</p>}
@@ -40,7 +41,9 @@ function App() {
       <Route path="*" element={<PageNotFound/>} /> 
     </Routes>
     </Suspense>
+    </ErrorBoundary>
   </BrowserRouter>
+  
   );
 }
 
