@@ -14,6 +14,7 @@ import Products from "./components/product";
 import UsersList from "./pages/user/usersList";
 import SignupUser from "./components/UserSignupLogin/register";
 import ErrorBoundary from './components/errorBoundary';
+import ErrorBoundary from "./components/errorBoundary";
 const About = React.lazy(() => import('./pages/about'));
 const DynamicRouting = React.lazy(() => import('./components/dynamicRouting')); //lazy loading not default load page
 
