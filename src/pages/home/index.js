@@ -1,28 +1,84 @@
 import {useState} from 'react';
-import Login from '../../component/login';
-import Signup from '../../component/signup';
-import StudentList from '../../component/list/StudentList';
-export default function Home() {
+import Login from '../../components/login';
+import Signup from '../../components/signup';
+import StudentList from '../../components/list/StudentList';
+import { Card } from "../../components/ui/card";
+import { CustomTable } from "../../components/ui/customTable";
+
+ function Home() {
   const [signUpForm , setsignUpForm] = useState(true);
   const [studentListData,setstudentList] = useState(false);
   const [loginForm,setLoginForm] = useState(true);
+
+  const [userList,setUserList] = useState([]);
+  const [userId,setUserId] = useState(null);
+  const [userDetails,setUserDetails] = useState(null);
+
+ 
+
   const showLoginForm = () =>{
-   return  setsignUpForm(false)
+     setsignUpForm(false)
   }
   const showSignupForm = () =>{
-   return setsignUpForm(true)
+    setsignUpForm(true)
   }
   const showStudentList = () =>{
-   return setstudentList(true), setLoginForm(false)
+    setstudentList(true); setLoginForm(false)
   }
+  
+  const handleSignUpData = (formInputsData) =>{
+   if(userId === null){
+    let existUserList = [...userList];
+    existUserList.push(formInputsData);
+    setUserList(existUserList);
+   }
+   else{
+    let existUserList = [...userList];
+    existUserList[userId] = formInputsData;
+    setUserList(existUserList);
+    setUserId(null);
+    setUserDetails(null);
+   }
+    
+
+  }
+  const delteUser = (index) => {
+    let existUserList = [...userList];
+    existUserList.splice(index, 1);
+    setUserList(existUserList);
+    
+  }
+  const editUserDetail = (index) =>{
+    setUserId(index);
+    setUserDetails(userList[index]);
+  }
+
   const formsType={
     login:"Login Form",
     signup:"Register form"
   }
+  const columns = [
+    {field:'fName',title:'First Name'},
+    {field:'lName',title:'Last Name'},
+    {field:'email',title:'Email'},
+    {field:'mobile',title:'Mobile'},
+  ]
   return (
     <>
-    {signUpForm ? <Signup formName={formsType.signup} loginForm = {showLoginForm}/> :loginForm ? <Login formName={formsType.login} signIn={showStudentList}  signUpForm={showSignupForm} /> : " "}
+    {signUpForm ? <Signup signupData={handleSignUpData} userDetails={userDetails}
+      formName={formsType.signup} loginForm = {showLoginForm}/> :
+      loginForm ? <Login formName={formsType.login} signIn={showStudentList} 
+      signUpForm={showSignupForm} /> : " "}
     {studentListData?   <StudentList /> : " "}
+    <div className="custom-container">
+      <Card title="User List" subTitle="Basic Information">
+      {userList.length > 0 ? (
+        <CustomTable columns={columns} tableData={userList} />
+      ) : 'no any user register'}
+      </Card>
+      </div>
     </>
   )
 }
+
+export default Home;

@@ -3,7 +3,7 @@ import CardItem from './cardItem';
 import ShopHeader from './shopHeader';
 import {ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/outline";
 import shopData from  './data';
-
+import { SelectWithLabel } from '../../components/ui/select';
  const OnlineShop = () => {
   const {brand,products} = shopData();
   
@@ -13,40 +13,14 @@ import shopData from  './data';
        <div className="mx-auto max-w-7xl w-full">
       <div className="flex flex-wrap justify-between max-w-3xl mx-auto w-full">
         <div className="w-1/2 sm:w-auto">
-          <div className="mb-6">
-            <label className="block text-left px-1 text-blue-900">Choose By Brand</label>
-            <select className="max-w-lg px-2 py-1 block my-1 outline-none border-primary border rounded-md">
-             {
-               brand.map((item) => (
-                <option value={item.name}>{item.name}</option>
-               ))
-             }
-            </select>
-          </div>
+          <SelectWithLabel label="select Brand" data={brand} />
         </div>
         <div className="w-1/2 sm:w-auto">
-          <div className="mb-6">
-            <label className="block text-left px-1 text-blue-900">Choose By Brand</label>
-            <select className="max-w-lg px-2 py-1 block my-1 outline-none border-primary border rounded-md">
-             {
-               brand.map((item) => (
-                <option value={item.name}>{item.name}</option>
-               ))
-             }
-            </select>
-          </div>
+        <SelectWithLabel label="Choose Brand" data={brand} />
+          
         </div>
         <div className="w-1/2 sm:w-auto">
-          <div className="mb-6">
-            <label className="block text-left px-1 text-blue-900">Choose By Brand</label>
-            <select className="max-w-lg px-2 py-1 block my-1 outline-none border-primary border rounded-md">
-             {
-               brand.map((item) => (
-                <option value={item.name}>{item.name}</option>
-               ))
-             }
-            </select>
-          </div>
+        <SelectWithLabel label="Choose Brand" data={brand} />
         </div>
       </div>
       
