@@ -6,6 +6,7 @@ import OnlineShop from "./pages/onlineshop";
 import PageNotFound from "./pages/pageNotFound";
 import RatingList from "./pages/rating";
 import UiComponent from "./pages/uiComponent";
+import Theme from "./component/theme/";
 const About = React.lazy(() => import('./pages/about'));
 const DynamicRouting = React.lazy(() => import('./component/dynamicRouting')); //lazy loading not default load page
 
@@ -24,6 +25,7 @@ function App() {
       <Route path="/onlineShop" element={<OnlineShop/>} /> 
       <Route path="/rating" element={<RatingList />} /> 
       <Route path="/uiComponent" element={<UiComponent />} /> 
+      <Route path="/theme" element={<Theme />} /> 
       <Route path="*" element={<PageNotFound/>} /> 
     </Routes>
     </Suspense>
