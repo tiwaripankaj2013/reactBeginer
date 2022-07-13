@@ -14,6 +14,7 @@ import Products from "./components/product";
 import UsersList from "./pages/user/usersList";
 import SignupUser from "./components/UserSignupLogin/register";
 import ErrorBoundary from './components/errorBoundary';
+import Theme from "./component/theme/";
 const About = React.lazy(() => import('./pages/about'));
 const DynamicRouting = React.lazy(() => import('./components/dynamicRouting')); //lazy loading not default load page
 
@@ -39,6 +40,7 @@ function App() {
       <Route path="/signup" element={<SignupUser />} /> 
       <Route path="/products" element={<Products />} /> 
       <Route path="/cart" element={<Cart />} /> 
+      <Route path="/theme" element={<Theme />} /> 
       <Route path="*" element={<PageNotFound/>} /> 
     </Routes>
     </Suspense>
